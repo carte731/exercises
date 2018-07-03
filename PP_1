@@ -1,0 +1,164 @@
+#!/bin/bash
+
+source $(pwd -P)/PP_1A
+
+rOw(){
+    if [ $1 == $2 ]; then
+        echo -e "You got the right answer for Question $3"
+    else
+        echo -e "Wrong answer for Question $3"
+    fi
+}
+
+## <--- These hashtags or pound-signs are comments (notes) for programmers...
+## <--- the computer ignores anything past it.
+## EVERY BASH SCRIPT STARTS WITH #!/bin/bash we will go over what this means later.
+
+
+                                ### OPERATOR EXERCISES ###
+## Choose the correct operators
+## IMPORTANT -- REPLACE THE ANSWER VARIABLE WITH THE CORRECT OPERATOR --
+
+
+    ## QUESTION_1
+## When accessing variables values use the dollar sign ($) I.E x=4 $x
+## Directly infront of it...
+QuestionNum=1
+x=3
+y=7
+ANSWER=' - ' ## change the value inside the apostrophes ' ' to the correct operator
+## IMPORTANT to access the variables data in BASH, you must use the dollar sign in front of the variable $x
+z=$(( $x $ANSWER $y )) ##IMPORTANT -- When performing math surround it with $(( )) --
+rOw $z $a1 $QuestionNum
+## echo command allows you to print to the terminal screen
+echo -e "The correct answer is $a1, your answer is $z.\n" 
+
+
+    ## QUESTION 2
+QuestionNum=2
+x=143
+y=10
+ANSWER=' + ' ## IMPORTANT -- REPLACE THE VALUE WITH CORRECT OPERATOR --
+z=$(( $x $ANSWER $y ))
+rOw $z $a2 $QuestionNum
+echo -e "The correct answer is $a2, your answer is $z\n"
+
+
+    ## QUESTION 3
+QuestionNum=3    
+x=1 ## Enter the correct Number for variables x and y
+y=1
+z=$(( $x / $y ))
+rOw $z $a3 $QuestionNum
+echo -e "The correct answer is $a3, your answer is $z\n"
+
+
+    ## QUESTION 4
+QuestionNum=4
+x=0 ## Enter the correct answer for x and y
+y=0
+ANSWER=' + ' ## Enter the correct operator
+z=$(( $x$ANSWER$y ))
+rOw $z $a4 $QuestionNum
+echo -e "The correct answer is $a4, your answer is $z\n"
+
+
+                            ### CONDITIONAL EXERCISES ###
+
+## complete the conditionals
+
+    ##  QUESTION 5
+## These Quotation marks " " mean anything within them are strings(char)...
+## REMEMBER "7" != 7
+QuestionNum=5
+Jeff="Dogs"
+ANSWER=' == ' ## change the value inside the apostrophes ' '
+echo -e "Is this a Dog or not?"
+if [ $Jeff $ANSWER $a5 ]; then ## if statements have brackets [ ] around them...
+    echo -e "CORRECT! Dogs are not the same as $a5" ## REMEMBER to indent, it's good form
+    $a5=$Jeff
+fi ## end the if statement sandwich with an fi
+rOw $Jeff $a5 $QuestionNum
+echo -e ""
+
+
+    ##  QUESTION 6
+QuestionNum=6
+Johnsons_penny_collection=6
+my_pennies=3
+ANSWER=' < '
+echo -e "Does Johnson have as many pennies as me?"
+if [ $Johnsons_penny_collection $ANSWER $my_pennies ]; then
+    echo -e "CORRECT - but how does Johnson have more than me."
+    $(( $Johnsons_penny_collection - 6 )) ## Taking his pennies
+    $(( $my_pennies + 6 )) ## My pennies now!!!
+fi
+rOw $my_pennies $a6 $QuestionNum
+echo -e ""
+
+
+    ## QUESTION 7
+savings_account=12
+party_money=300
+echo -e "Adulting the game - Question 7"
+if [ $party_money > $savings_account ]; then
+    echo -e "WRONG! You're an adult, save some money..."
+    echo -e "Change your priorities (account variables)!!!\n"
+else
+    echo -e "CORRECT! You've got your priorities straight but you're boring!\n "
+fi
+
+
+##  QUESTION 8
+bobs_attendance="present"
+becky_perkiness_level=10
+ANSWER_ONE=' == '
+ANSWER_TWO=' > '
+echo -e "Sick call simulator - Question 8"
+if [ $bobs_attendance $ANSWER_ONE $a8A ]; then
+    echo -e "WRONG! Gross, Bob's here today. I'm calling in sick today!\n"
+elif [ $a8B $ANSWER_TWO $becky_perkiness_level ]; then
+    echo -e "WRONG! Ewww, Perky Becky is peak perky today 10/10. I'm calling in sick today!\n"
+else
+    echo -e "CORRECT! Time to get to work!\n"
+fi
+
+
+                            ### IF, ELSE ELIF ###
+
+## I'll will give you a description, write a short script to answer it.
+
+
+    ##QUESTION 9
+## Bobby has an apple basket with 4 apples
+## Bobby finds 3 more apples and adds them to his basket
+## Bobby eats 4 apples from his basket
+## if Booby has less than 4 apples, then his mom will call him a bad boy
+## else he will be called a good boy.
+QuestionNum=9
+apples=0
+## Add code below
+
+
+rOw $apples $a9 $QuestionNum
+echo -e ''
+
+
+    ##QUESTION 10
+## You are the navigator for the aircraft 'shiny dingo', looking to drop supplies for Oklahoma Jones - The famous archaeologist!
+## You have 9 supply crates, you must drop 2 to 4 crates for Oklahoma Jones.
+## The 'shiny dingo' needs to be 500ft above ground level (AGL) to drop the supplies
+## you have to program the flight computer to find how close you're to the surface 
+## 'shiny dingo' is currently flying at an altitude of 1500ft above sea level (MSL)
+## The navigation chart states that the surface is 1050ft above the sea
+## Calculate how close you're from the surface (AGL) by subtracting MSL from the surface distance (1050ft)
+## if the 'shiny dingo's altitude above 500ft, then drop 4 crates by subtracting it from your flight computer variable and tell Oklahoma Jones "good luck"
+## else-if (elif) the 'shiny dingo's has cargo more than 4 crates, then drop 2 crates by subtracting them from the flight computer variable and tell Oklahoma Jones "theyre coming in hot"
+## else, turn around and fly home, and tell Oklahoma Jones "Tough luck! I'm going home!"
+QuestionNum=10
+supply_crates=9
+# Add code below
+
+
+rOw $supply_crates $a10 $QuestionNum
+echo -e ''
